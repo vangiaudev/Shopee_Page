@@ -5,19 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopee by Văn Giàu</title>
+    <link rel="stylesheet" href="./assets/css/grid.css">
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap&subset=vietnamese" rel="stylesheet">
     <link rel="stylesheet" href="./assets/font/fontawesome-free-5.15.1-web/css/all.min.css">
-</head>
+</head> 
 
 <body>
     <div class="app">
         <header class="header">
-            <div class="grid">
-                <nav class="header__navbar">
+            <div class="grid wide">
+                <nav class="header__navbar hide-on-mobile-tablet">
                     <ul class="header__navbar-list">
                         <li class="header__navbar-item header__navbar-item--has-qr header__navbar-item--separate">
                             Tải ứng dụng
@@ -145,7 +147,10 @@
 
                 <!-- HEADER WITH SEARCH -->
                 <div class="header-with-search">
-                    <div class="header__logo">
+                    <label class="header__mobile-search" for="mobile-search-checkbox">
+                        <i class="fas fa-search header__mobile-search-icon"></i>
+                    </label>
+                    <div class="header__logo hide-on-tablet">
                         <a href="" class="header__logo-link">
                             <svg viewBox="0 0 192 65" class="header__logo-img">
                                 <g fill-rule="evenodd">
@@ -154,7 +159,8 @@
                             </svg>
                         </a>
                     </div>
-                    <div class="header__search">
+                    <input type="checkbox" hidden id="mobile-search-checkbox" class="header__search-checkbox">
+                    <div class="header__search ">
                         <div class="header__search-input-wrap">
                             <input type="text" class="header__search-input" placeholder="Tìm sản phẩm, thương hiệu và tên shop">
                             <!-- search history -->
@@ -353,11 +359,25 @@
                     </div>
                 </div>
             </div>
+            <ul class="header__sort-bar">
+                <li class="header__sort-item header__sort-item--active">
+                    <a href="" class="header__sort-link">Phổ biến</a>
+                </li>
+                <li class="header__sort-item ">
+                    <a href="" class="header__sort-link ">Mới nhất</a>
+                </li>
+                <li class="header__sort-item ">
+                    <a href="" class="header__sort-link">Bán chạy</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Giá</a>
+                </li>
+            </ul>
         </header>
         <div class="app__container">
-            <div class="grid">
-                <div class="grid__row app__content">
-                    <div class="grid__column-2">
+            <div class="grid wide">
+                <div class="row sm-gutter app__content">
+                    <div class="col l-2 m-0 c-0">
                         <nav class="category">
                             <h3 class="category__heading">
                                 <i class="category__heading-icon fas fa-list"></i>
@@ -391,8 +411,8 @@
                             </ul>
                         </nav>
                     </div>
-                    <div class="grid__column-10">
-                        <div class="home-filter">
+                    <div class="col l-10 m12 c-12">
+                        <div class="home-filter hide-on-mobile-tablet">
                             <span class="home-filter__label">
                                 Sắp xếp theo
                             </span>
@@ -432,11 +452,49 @@
                             </div>
                         </div>
 
+                        <nav class="mobile-category">
+                            <ul class="mobile-category__list">
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Thiết bị điện tử </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Điện thoại chính hãng</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Máy tính bảng</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Pin sạc dự phòng</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Vỏ, Bao & Ốp lưng</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Miến dán màn hình</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Pin, Cáp & Bộ sạc</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Gậy chụp hình</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Sim</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Laptop chính hãng</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Đồng hồ thông minh</a>
+                                </li>
+                                
+                            </ul>
+                        </nav>
                         <div class="home-product">
                             <!-- [Grid -> Row -> Colum] -->
-                            <div class="grid__row">
+                            <div class="row sm-gutter">
                                 <!-- Product Item -->
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(https://cf.shopee.com.my/file/02dad4be616dbc05d703c758663befe3);">
                                             <h4 class="home-product-item__name">Điện thoại Xiaomi Redmi Note 9 Pro (6GB/128GB) - Hàng chính hãng</h4>
@@ -473,7 +531,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(https://static.digit.in/default/thumb_68418_default_td_480x480.jpeg?tr=w-1200);">
                                             <h4 class="home-product-item__name">Điện thoại Oppo F1s ram 4G/32G mới CHÍNH HÃNG - chơi Game mượt</h4>
@@ -510,7 +568,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/e8d4ce6c140a96d4493c5ec2437fa911);">
                                             <h4 class="home-product-item__name">Điện Thoại Vsmart Joy 4 (4GB/64GB) - Hàng Chính Hãng</h4>
@@ -547,7 +605,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/cfa1b62efbadc456885d8b2139986e39);">
                                             <h4 class="home-product-item__name">Điện Thoại Vsmart Active 3 ( 4GB/64GB ) - Hàng Chính Hãng</h4>
@@ -584,7 +642,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/f0bcdb32142078c7b9a96f843d0e8b15);">
                                             <h4 class="home-product-item__name">Apple iPhone 12 64GB - Hàng Xách Tay</h4>
@@ -621,7 +679,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/29d53adea3d3c1f0ebde508cffc4fafa);">
                                             <h4 class="home-product-item__name">Xiaomi Redmi K30 5G (6/64)GB, nhập khẩu nguyên seal, sẵn Tiếng Việt.</h4>
@@ -658,7 +716,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/21a678cfa4caddb8a05f9c4bd2bfaef9);">
                                             <h4 class="home-product-item__name">[Mã ELMS01 giảm 7% đơn 500K] Realme Q Ram 4GB 64GB - Hàng nhập khẩu</h4>
@@ -695,7 +753,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/e09ab23d7e080e75acc077b146e56b3e);">
                                             <h4 class="home-product-item__name">[Ưu đãi 50%] Điện thoại Samsung Galaxy Note 20 Ultra chính hãng xả kho dự trữ hàng trưng bày</h4>
@@ -732,7 +790,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/3001d986cb57fe5bf5e8f2d60a35c4f8);">
                                             <h4 class="home-product-item__name">Điện thoại Smartphone Vsmart Star MH 5.7inch HD, Ram 2GB Rom 16Gb, Kết nối 4G Bảo hành 18 tháng</h4>
@@ -769,7 +827,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/df5e86f1f9ca7e2b4bda50e9e0f23279);">
                                             <h4 class="home-product-item__name">Điện thoại Vivo V20 (8GB -128GB) - Hàng chính hãng</h4>
@@ -806,7 +864,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/89f39d57c0317740cfa3ed9d7955ba6a);">
                                             <h4 class="home-product-item__name">[Mã ELMSMT giảm 5% đơn 2TR] Điện thoại Vsmart Aris (6G/64GB) – Chính hãng</h4>
@@ -843,7 +901,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(https://cf.shopee.ph/file/624fc2e8a0dda59fc2d92953dd4822f8);">
                                             <h4 class="home-product-item__name">HUAWEI NOVA 7i BRAND NEW ORIGINAL</h4>
@@ -880,7 +938,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/4ea80f2cd418379a6f6ba73241f9d4b3);">
                                             <h4 class="home-product-item__name">[Mã ELRE1M giảm 5% đơn 3TR] Điện Thoại OPPO Reno5 (8GB/128GB) - Hàng Chính Hãng</h4>
@@ -917,7 +975,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(https://cf.shopee.ph/file/44a6828909bf449bbd07aa136b7f3366);">
                                             <h4 class="home-product-item__name">Điện Thoại Xiaomi Pocophone F1 64Gb Ram 6Gb - Hàng Chính Hãng</h4>
@@ -954,7 +1012,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(https://cf.shopee.ph/file/805f794c16993270c4f276f2f045c4c1);">
                                             <h4 class="home-product-item__name">Điện thoại Realme 6 Pro ram 8GB 128GB mới 100% hàng chính hãng</h4>
@@ -1032,9 +1090,9 @@
             </div>
         </div>
         <footer class="footer">
-            <div class="grid">
-                <div class="grid__row">
-                    <div class="grid__column-2-4">
+            <div class="grid wide footer__content">
+                <div class="row">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">CHĂM SÓC KHÁCH HÀNG</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -1068,7 +1126,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">VỀ SHOPEE</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -1100,7 +1158,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">THANH TOÁN</h3>
                         <ul class="footer-list">
                             <li class="footer-item ">
@@ -1115,7 +1173,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">THEO DÕI CHÚNG TÔI TRÊN</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -1135,7 +1193,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-12">
                         <h3 class="footer__heading">TẢI ỨNG DỤNG SHOPEE NGAY THÔI</h3>
                         <div class="footer__download">
                             <img src="./assets/img/QR_code_shopee.png" alt="Download QR" class="footer__download-qr">
@@ -1154,7 +1212,7 @@
             </div>
 
             <div class="footer__bottom">
-                <div class="grid">
+                <div class="grid wide">
                     <p class="footer__text">© 2021 - Bản quyền thuộc về Nguyễn Văn Giàu - Recca</p>
                 </div>
             </div>
